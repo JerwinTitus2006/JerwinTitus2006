@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/jerwintitus/jerwintitus/blob/main/banner.png" alt="Banner" width="100%" />
+<img src="https://raw.githubusercontent.com/JerwinTitus2006/JerwinTitus2006/main/banner.png" alt="Banner" width="100%" />
 </p>
 
 <h1 align="center">Hi 👋, I'm Jerwin Titus</h1>
