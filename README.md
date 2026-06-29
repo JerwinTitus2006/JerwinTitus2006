@@ -230,7 +230,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 <!-- START_SECTION:spotify -->
 <div align="center">
   <a href="https://open.spotify.com/track/630sXRhIcfwr2e4RdNtjKN" target="_blank" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/e/e5/The_Greatest_Showman_soundtrack_cover.png" width="80" height="80" style="border-radius: 8px; margin-right: 15px; vertical-align: middle; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
+    <img src="https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02128057b40732c042c86de1dd" width="80" height="80" style="border-radius: 8px; margin-right: 15px; vertical-align: middle; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
     <div style="display: inline-block; text-align: left; vertical-align: middle;">
       <span style="color: #1DB954; font-weight: bold; font-size: 14px;">🔊 NOW PLAYING</span><br/>
       <span style="font-weight: 600; font-size: 16px; color: #ffffff;">Rewrite the Stars</span><br/>
