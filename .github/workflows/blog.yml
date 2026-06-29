@@ -32,7 +32,7 @@ jobs:
           # Target placeholders in README: <!--START_SECTION:blog-posts--> and <!--END_SECTION:blog-posts-->
           comment_tag_name: "blog-posts"
           # Feed list supporting Medium, Hashnode, and Dev.to
-          feed_list: "https://medium.com/feed/@JerwinTitus2006,https://jerwintitus.hashnode.dev/rss.xml,https://dev.to/feed/jerwintitus"
+          feed_list: "https://medium.com/feed/@titusjerwin,https://jerwintitus.hashnode.dev/rss.xml,https://dev.to/feed/jerwintitus"
           max_post_count: 5
           # Output layout configuration
           template: "$newline- 🚀 [$title]($url) ($date)"

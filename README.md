@@ -230,7 +230,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 <!-- START_SECTION:spotify -->
 <div align="center">
   <a href="https://open.spotify.com/track/630sXRhIcfwr2e4RdNtjKN" target="_blank" rel="noopener noreferrer">
-    <img src="https://i.scdn.co/image/ab67616d0000b27350a40fe4db424564c7608fb6" width="80" height="80" style="border-radius: 8px; margin-right: 15px; vertical-align: middle; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e5/The_Greatest_Showman_soundtrack_cover.png" width="80" height="80" style="border-radius: 8px; margin-right: 15px; vertical-align: middle; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
     <div style="display: inline-block; text-align: left; vertical-align: middle;">
       <span style="color: #1DB954; font-weight: bold; font-size: 14px;">🔊 NOW PLAYING</span><br/>
       <span style="font-weight: 600; font-size: 16px; color: #ffffff;">Rewrite the Stars</span><br/>
@@ -245,6 +245,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 ## ✍️ Latest Blog Articles
 
 <!-- START_SECTION:blog-posts -->
+- 🚀 [From Overwhelmed to Understanding: How Building My Own Neural Network Made Machine Learning Click](https://medium.com/@titusjerwin/from-overwhelmed-to-understanding-how-building-my-own-neural-network-made-machine-learning-click-bdc4cf2dbce5)
 <!-- END_SECTION:blog-posts -->
 
 ---
@@ -252,6 +253,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 ## ⚡ Recent GitHub Activity
 
 <!-- START_SECTION:activity -->
+*My latest public commits, pull requests, and activity on GitHub will appear here automatically.*
 <!-- END_SECTION:activity -->
 
 ---
@@ -259,9 +261,10 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 ## 💡 Developer Musings
 
 <!-- START_SECTION:quote -->
-> *"Talk is cheap. Show me the code."*
+
+> *"I expect disappointment, so I can never be disappointed 🙃"*
 >
-> — **Linus Torvalds**
+> — **MJ (Spider-Man: No Way Home)**
 <!-- END_SECTION:quote -->
 
 ---

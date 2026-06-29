@@ -41,6 +41,7 @@ jobs:
           import random
 
           quotes = [
+              {"quote": "I expect disappointment, so I can never be disappointed 🙃", "author": "MJ (Spider-Man: No Way Home)"},
               {"quote": "Talk is cheap. Show me the code.", "author": "Linus Torvalds"},
               {"quote": "Programs must be written for people to read, and only incidentally for machines to execute.", "author": "Harold Abelson"},
               {"quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", "author": "Martin Fowler"},
@@ -48,20 +49,17 @@ jobs:
               {"quote": "Experience is the name everyone gives to their mistakes.", "author": "Oscar Wilde"},
               {"quote": "Code is like humor. When you have to explain it, it’s bad.", "author": "Cory House"},
               {"quote": "Before software can be reusable it first has to be usable.", "author": "Ralph Johnson"},
-              {"quote": "Make it work, make it right, make it fast.", "author": "Kent Beck"}
+              {"quote": "Make it work, make it right, make it fast.", "author": "Kent Beck"},
+              {"quote": "Simplicity is the soul of efficiency.", "author": "Austin Freeman"},
+              {"quote": "The best way to predict the future is to invent it.", "author": "Alan Kay"},
+              {"quote": "AI will not replace developers, but developers who use AI will replace those who do not.", "author": "Tech Proverb"},
+              {"quote": "The only way to learn a new programming language is by writing programs in it.", "author": "Dennis Ritchie"},
+              {"quote": "Computers are good at following instructions, but not at reading your mind.", "author": "Donald Knuth"}
           ]
 
-          try:
-              req = urllib.request.Request("https://zenquotes.io/api/random", headers={"User-Agent": "Mozilla/5.0"})
-              with urllib.request.urlopen(req) as response:
-                  data = json.loads(response.read().decode())
-                  quote_text = data[0]["q"]
-                  quote_author = data[0]["a"]
-          except Exception as e:
-              print(f"API failed, using fallback: {e}")
-              q = random.choice(quotes)
-              quote_text = q["quote"]
-              quote_author = q["author"]
+          q = random.choice(quotes)
+          quote_text = q["quote"]
+          quote_author = q["author"]
 
           quote_md = f"\n> *\"{quote_text}\"*\n>\n> — **{quote_author}**\n"
 
