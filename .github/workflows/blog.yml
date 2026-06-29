@@ -1,0 +1,40 @@
+# Latest Blog Posts Auto-Updater Workflow
+# Pulls latest articles from Medium, Hashnode, and Dev.to RSS feeds and inserts them in README.md
+
+name: Latest Blog Posts
+
+on:
+  # Run every 12 hours
+  schedule:
+    - cron: "0 */12 * * *"
+  # Allow manual trigger
+  workflow_dispatch:
+  # Run on push to main
+  push:
+    branches:
+      - main
+
+jobs:
+  update-posts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Fetch blog posts using gautamkrishnar/blog-post-workflow
+      - name: Pull Latest Posts
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          # Target placeholders in README: <!--START_SECTION:blog-posts--> and <!--END_SECTION:blog-posts-->
+          comment_tag_name: "blog-posts"
+          # Feed list supporting Medium, Hashnode, and Dev.to
+          feed_list: "https://medium.com/feed/@JerwinTitus2006,https://jerwintitus.hashnode.dev/rss.xml,https://dev.to/feed/jerwintitus"
+          max_post_count: 5
+          # Output layout configuration
+          template: "$newline- 🚀 [$title]($url) ($date)"
+          date_format: "yyyy-mmm-dd"
+          commit_message: "chore: update latest blog posts [skip ci]"

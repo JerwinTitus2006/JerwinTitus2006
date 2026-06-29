@@ -1,0 +1,22 @@
+name: Question
+description: Ask a question or seek clarification regarding this profile or setup
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you have a question about how this profile was designed, how workflows are set up, or how to fork and reuse it, feel free to ask!
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: e.g., How do I set up the Spotify workflow secrets?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide any context that might help answer your question.

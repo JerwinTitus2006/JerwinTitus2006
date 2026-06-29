@@ -1,0 +1,52 @@
+# GitHub Skyline 3D Model Cacher Workflow
+# Downloads the 3D STL representation of the user's contributions for the current year
+# This allows visitors to view or 3D-print the user's coding contribution history
+
+name: Generate GitHub Skyline STL
+
+on:
+  # Run monthly to update the STL representation
+  schedule:
+    - cron: "0 0 1 * *"
+  # Allow manual trigger
+  workflow_dispatch:
+  # Run on push to main
+  push:
+    branches:
+      - main
+
+jobs:
+  cache-skyline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Ensure assets directory exists
+      - name: Ensure Assets Directory Exists
+        run: mkdir -p assets
+
+      # Step 3: Fetch current year and download STL
+      - name: Download Skyline STL
+        run: |
+          YEAR=$(date +%Y)
+          echo "Fetching skyline for year $YEAR"
+          # Download STL from GitHub Skyline API, fall back to last year if current year is not generated yet
+          curl -s -L "https://skyline.github.com/JerwinTitus2006/$YEAR.stl" -o assets/skyline.stl || curl -s -L "https://skyline.github.com/JerwinTitus2006/2025.stl" -o assets/skyline.stl
+
+      # Step 4: Commit and Push
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/skyline.stl
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update github skyline 3d model [skip ci]"
+            git push
+          fi

@@ -1,0 +1,90 @@
+# Developer Quote Auto-Updater Workflow
+# Fetches a random developer quote from an API (with fallback) and updates README.md
+
+name: Update Developer Quote
+
+on:
+  # Run daily at midnight
+  schedule:
+    - cron: "0 0 * * *"
+  # Allow manual trigger
+  workflow_dispatch:
+  # Run on push to main
+  push:
+    branches:
+      - main
+
+jobs:
+  update-quote:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # Step 3: Run Quote Updater Script
+      - name: Run Quote Updater
+        run: |
+          python -c '
+          import re
+          import urllib.request
+          import json
+          import random
+
+          quotes = [
+              {"quote": "Talk is cheap. Show me the code.", "author": "Linus Torvalds"},
+              {"quote": "Programs must be written for people to read, and only incidentally for machines to execute.", "author": "Harold Abelson"},
+              {"quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", "author": "Martin Fowler"},
+              {"quote": "First, solve the problem. Then, write the code.", "author": "John Johnson"},
+              {"quote": "Experience is the name everyone gives to their mistakes.", "author": "Oscar Wilde"},
+              {"quote": "Code is like humor. When you have to explain it, it’s bad.", "author": "Cory House"},
+              {"quote": "Before software can be reusable it first has to be usable.", "author": "Ralph Johnson"},
+              {"quote": "Make it work, make it right, make it fast.", "author": "Kent Beck"}
+          ]
+
+          try:
+              req = urllib.request.Request("https://zenquotes.io/api/random", headers={"User-Agent": "Mozilla/5.0"})
+              with urllib.request.urlopen(req) as response:
+                  data = json.loads(response.read().decode())
+                  quote_text = data[0]["q"]
+                  quote_author = data[0]["a"]
+          except Exception as e:
+              print(f"API failed, using fallback: {e}")
+              q = random.choice(quotes)
+              quote_text = q["quote"]
+              quote_author = q["author"]
+
+          quote_md = f"\n> *\"{quote_text}\"*\n>\n> — **{quote_author}**\n"
+
+          with open("README.md", "r", encoding="utf-8") as f:
+              readme = f.read()
+
+          pattern = r"<!--START_SECTION:quote-->.*?<!--END_SECTION:quote-->"
+          replacement = f"<!--START_SECTION:quote-->{quote_md}<!--END_SECTION:quote-->"
+          new_readme = re.sub(pattern, replacement, readme, flags=re.DOTALL)
+
+          with open("README.md", "w", encoding="utf-8") as f:
+              f.write(new_readme)
+          '
+
+      # Step 4: Commit and Push Changes
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes in README.md"
+          else
+            git commit -m "chore: update random developer quote [skip ci]"
+            git push
+          fi

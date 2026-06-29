@@ -1,0 +1,88 @@
+# GitHub Metrics Workflow
+# Uses lowlighter/metrics to generate automated profile infographics
+# Outputs will be saved as SVG files to the repository or as artifacts
+
+name: GitHub Metrics
+
+on:
+  # Run everyday at midnight
+  schedule:
+    - cron: "0 0 * * *"
+  # Allow manual trigger
+  workflow_dispatch:
+  # Run on push to main
+  push:
+    branches:
+      - main
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate Profile Metrics Infographics
+        uses: lowlighter/metrics@latest
+        with:
+          # Personal access token with repo, read:org, read:user, read:packages permissions is required
+          token: ${{ secrets.METRICS_TOKEN }}
+          
+          # Target GitHub user
+          user: JerwinTitus2006
+          
+          # Template & timezone config
+          template: classic
+          config_timezone: Asia/Kolkata
+          
+          # Core components to include
+          base: header, activity, community, repositories, metadata
+          
+          # 1. Achievements Plugin
+          plugin_achievements: yes
+          plugin_achievements_secrets: yes
+          plugin_achievements_threshold: C
+          
+          # 2. Languages Plugin
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+          
+          # 3. Lines of Code Plugin
+          plugin_lines: yes
+          
+          # 4. Traffic Plugin
+          plugin_traffic: yes
+          
+          # 5. Habits Plugin
+          plugin_habits: yes
+          plugin_habits_charts: yes
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_from: 200
+          
+          # 6. Isometric Calendar (plugin_isocalendar)
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          
+          # 7. Discussions Plugin
+          plugin_discussions: yes
+          
+          # 8. Followup (Issues & Pull Requests tracker)
+          plugin_followup: yes
+          plugin_followup_sections: user
+          
+          # 9. Notable Contributions
+          plugin_notable: yes
+          plugin_notable_from: all
+          plugin_notable_types: commit, pull_request, issue
+          
+          # 10. Stars Plugin
+          plugin_stars: yes
+          plugin_stars_limit: 4

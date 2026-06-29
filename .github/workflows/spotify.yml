@@ -1,0 +1,158 @@
+# Spotify Currently Playing Widget Workflow
+# Fetches live playing status or recently played song from Spotify API and updates README.md
+# Requires secrets: SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN
+
+name: Update Spotify Playing Status
+
+on:
+  # Run every 15 minutes to keep music stats fresh
+  schedule:
+    - cron: "*/15 * * *"
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  update-spotify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch and Update Spotify Status
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+        run: |
+          node -e '
+          const fs = require("fs");
+          const https = require("https");
+
+          const client_id = process.env.SPOTIFY_CLIENT_ID;
+          const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+          const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
+
+          if (!client_id || !client_secret || !refresh_token) {
+            console.log("Spotify credentials are not set. Skipping update.");
+            process.exit(0);
+          }
+
+          // Function to make HTTP requests
+          function request(url, options = {}, postData = null) {
+            return new Promise((resolve, reject) => {
+              const req = https.request(url, options, (res) => {
+                let data = "";
+                res.on("data", (chunk) => data += chunk);
+                res.on("end", () => resolve({ statusCode: res.statusCode, body: data }));
+              });
+              req.on("error", (err) => reject(err));
+              if (postData) {
+                req.write(postData);
+              }
+              req.end();
+            });
+          }
+
+          async function main() {
+            try {
+              // 1. Get Access Token
+              const auth = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
+              const tokenResponse = await request("https://accounts.spotify.com/api/token", {
+                method: "POST",
+                headers: {
+                  "Authorization": `Basic ${auth}`,
+                  "Content-Type": "application/x-www-form-urlencoded"
+                }
+              }, `grant_type=refresh_token&refresh_token=${refresh_token}`);
+
+              const tokenData = JSON.parse(tokenResponse.body);
+              const access_token = tokenData.access_token;
+
+              if (!access_token) {
+                throw new Error("Failed to retrieve access token");
+              }
+
+              // 2. Fetch Currently Playing
+              const playingResponse = await request("https://api.spotify.com/v1/me/player/currently-playing", {
+                headers: { "Authorization": `Bearer ${access_token}` }
+              });
+
+              let widgetHtml = "";
+
+              if (playingResponse.statusCode === 200 && playingResponse.body) {
+                const playingData = JSON.parse(playingResponse.body);
+                if (playingData.is_playing) {
+                  const songName = playingData.item.name;
+                  const artistName = playingData.item.artists.map(a => a.name).join(", ");
+                  const songUrl = playingData.item.external_urls.spotify;
+                  const albumArtUrl = playingData.item.album.images[0].url;
+
+                  widgetHtml = `\n<div align="center">\n  <a href="${songUrl}" target="_blank" rel="noopener noreferrer">\n    <img src="${albumArtUrl}" width="80" height="80" style="border-radius: 8px; margin-right: 15px; vertical-align: middle; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />\n    <div style="display: inline-block; text-align: left; vertical-align: middle;">\n      <span style="color: #1DB954; font-weight: bold; font-size: 14px;">🔊 NOW PLAYING</span><br/>\n      <span style="font-weight: 600; font-size: 16px; color: #ffffff;">${songName}</span><br/>\n      <span style="font-size: 14px; color: #a7a7a7;">by ${artistName}</span>\n    </div>\n  </a>\n</div>\n`;
+                }
+              }
+
+              // 3. Fallback to Recently Played if offline/not playing
+              if (!widgetHtml) {
+                const recentResponse = await request("https://api.spotify.com/v1/me/player/recently-played?limit=1", {
+                  headers: { "Authorization": `Bearer ${access_token}` }
+                });
+
+                if (recentResponse.statusCode === 200 && recentResponse.body) {
+                  const recentData = JSON.parse(recentResponse.body);
+                  if (recentData.items && recentData.items.length > 0) {
+                    const track = recentData.items[0].track;
+                    const songName = track.name;
+                    const artistName = track.artists.map(a => a.name).join(", ");
+                    const songUrl = track.external_urls.spotify;
+                    const albumArtUrl = track.album.images[0].url;
+
+                    widgetHtml = `\n<div align="center">\n  <a href="${songUrl}" target="_blank" rel="noopener noreferrer">\n    <img src="${albumArtUrl}" width="80" height="80" style="border-radius: 8px; margin-right: 15px; vertical-align: middle; opacity: 0.8;" />\n    <div style="display: inline-block; text-align: left; vertical-align: middle;">\n      <span style="color: #a7a7a7; font-weight: bold; font-size: 14px;">🔇 OFFLINE • LAST PLAYED</span><br/>\n      <span style="font-weight: 600; font-size: 16px; color: #ffffff;">${songName}</span><br/>\n      <span style="font-size: 14px; color: #a7a7a7;">by ${artistName}</span>\n    </div>\n  </a>\n</div>\n`;
+                  }
+                }
+              }
+
+              if (!widgetHtml) {
+                widgetHtml = `\n<div align="center">\n  <span style="font-size: 14px; color: #a7a7a7;">🔇 Nothing playing right now</span>\n</div>\n`;
+              }
+
+              // Write to README
+              const readmePath = "README.md";
+              let readmeContent = fs.readFileSync(readmePath, "utf8");
+
+              const pattern = /<!--START_SECTION:spotify-->[\s\S]*?<!--END_SECTION:spotify-->/;
+              const replacement = `<!--START_SECTION:spotify-->${widgetHtml}<!--END_SECTION:spotify-->`;
+
+              if (pattern.test(readmeContent)) {
+                readmeContent = readmeContent.replace(pattern, replacement);
+                fs.writeFileSync(readmePath, readmeContent, "utf8");
+                console.log("Spotify status updated successfully.");
+              } else {
+                console.log("Spotify placeholders not found in README.md.");
+              }
+            } catch (err) {
+              console.error("Error executing script:", err);
+            }
+          }
+
+          main();
+          '
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update spotify currently playing widget [skip ci]"
+            git push
+          fi

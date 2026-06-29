@@ -1,0 +1,36 @@
+# Automatic GitHub Activity Updater Workflow
+# Fetches recent commits, issues, PRs and inserts them between placeholders in README.md
+
+name: Update Activity
+
+on:
+  # Run every 6 hours to keep activity updated
+  schedule:
+    - cron: "0 */6 * * *"
+  # Allow manual trigger
+  workflow_dispatch:
+  # Run on push to main
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    name: Update Activity in README
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Run GitHub Activity Readme action
+      - name: Update GitHub Activity Section
+        uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          COMMIT_MSG: "chore: update github activity [skip ci]"
+          MAX_LIMIT: 5

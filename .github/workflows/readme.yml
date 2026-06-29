@@ -1,0 +1,37 @@
+# README Health Check Workflow
+# Validates markdown links and structure to ensure high-quality presentation
+
+name: README Health Check
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "README.md"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "README.md"
+  schedule:
+    # Run weekly to check for stale/broken external links
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check Markdown Links
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          # Arguments to pass to lychee
+          args: --verbose --no-progress README.md
+          # Fail the action if broken links are found
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
