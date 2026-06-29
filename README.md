@@ -12,7 +12,7 @@
 <br/>
 
 <!-- Profile Views -->
-<img src="https://komarev.com/normal-badge/?username=JerwinTitus2006&style=flat-square&color=00f2fe&label=PROFILE+VIEWS" alt="Profile Views" />
+<img src="https://komarev.com/ghpvc/?username=JerwinTitus2006&style=flat-square&color=00f2fe&label=PROFILE+VIEWS" alt="Profile Views" />
 
 <br/>
 <br/>
