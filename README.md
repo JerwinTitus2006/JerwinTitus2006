@@ -7,25 +7,25 @@
 <br/>
 
 <!-- Typing Animation -->
-<img src="https://readme-typing-svg.demolab.com?font=Outfit&amp;weight=600&amp;size=24&amp;duration=3500&amp;pause=1000&amp;color=00F2FE&amp;center=true&amp;vCenter=true&amp;width=600&amp;height=50&amp;lines=AI+Engineer;Full+Stack+Developer;Generative+AI+Explorer;Building+Intelligent+Systems" alt="Typing Animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=24&duration=3500&pause=1000&color=00F2FE&center=true&vCenter=true&width=600&height=50&lines=AI+Engineer;Full+Stack+Developer;Generative+AI+Explorer;Building+Intelligent+Systems" alt="Typing Animation" />
 
 <br/>
 
 <!-- Profile Views -->
-<img src="https://komarev.com/normal-badge/?username=JerwinTitus2006&amp;style=flat-square&amp;color=00f2fe&amp;label=PROFILE+VIEWS" alt="Profile Views" />
+<img src="https://komarev.com/normal-badge/?username=JerwinTitus2006&style=flat-square&color=00f2fe&label=PROFILE+VIEWS" alt="Profile Views" />
 
 <br/>
 <br/>
 
 <!-- Social Badges -->
 <a href="https://linkedin.com/in/jerwintitus" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn" />
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
-<a href="https://jerwintitus.github.io" target="_blank">
-  <img src="https://img.shields.io/badge/Portfolio-00F2FE?style=flat-square&amp;logo=google-chrome&amp;logoColor=black" alt="Portfolio" />
+<a href="https://jerwintitus.tech" target="_blank">
+  <img src="https://img.shields.io/badge/Portfolio-00F2FE?style=flat-square&logo=google-chrome&logoColor=black" alt="Portfolio" />
 </a>
 <a href="mailto:jerwintitusofficial@gmail.com">
-  <img src="https://img.shields.io/badge/Email-jerwintitusofficial%40gmail.com-D14836?style=flat-square&amp;logo=gmail&amp;logoColor=white" alt="Email" />
+  <img src="https://img.shields.io/badge/Email-jerwintitusofficial%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
 </a>
 
 </div>
@@ -267,7 +267,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 | :--- | :--- |
 | **Email** | [jerwintitusofficial@gmail.com](mailto:jerwintitusofficial@gmail.com) |
 | **LinkedIn** | [linkedin.com/in/jerwintitus](https://linkedin.com/in/jerwintitus) |
-| **Portfolio** | [jerwintitus.github.io](https://jerwintitus.github.io) |
+| **Portfolio** | [jerwintitus.tech](https://jerwintitus.tech) |
 
 <br/>
 
