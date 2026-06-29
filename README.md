@@ -189,8 +189,8 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 ## 🏆 LeetCode Profile
 <div align="center">
 
-<a href="https://leetcode.com/USERNAME_HERE" target="_blank">
-  <img src="https://leetcode-stats-card.herokuapp.com/?username=USERNAME_HERE&amp;theme=dark" alt="LeetCode Stats" />
+<a href="https://leetcode.com/u/n8ocko7IIm/" target="_blank">
+  <img src="https://leetcode-stats-card.herokuapp.com/?username=n8ocko7IIm&amp;theme=dark" alt="LeetCode Stats" />
 </a>
 
 </div>
