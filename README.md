@@ -156,10 +156,10 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 <table border="0" style="border: none;">
   <tr style="border: none;">
     <td style="border: none; padding: 5px;">
-      <img src="https://github-readme-stats.vercel.app/api?username=JerwinTitus2006&amp;show_icons=true&amp;theme=dark&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=00f2fe&amp;icon_color=4facfe&amp;text_color=8b949e" alt="GitHub Stats" />
+      <img src="https://github-readme-stats.vercel.app/api?username=JerwinTitus2006&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=00f2fe&icon_color=4facfe&text_color=8b949e" alt="GitHub Stats" />
     </td>
     <td style="border: none; padding: 5px;">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=JerwinTitus2006&amp;theme=dark&amp;hide_border=true&amp;background=0d1117&amp;ring=00f2fe&amp;fire=00f2fe&amp;sideLabels=8b949e&amp;sideNums=ffffff" alt="GitHub Streak" />
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=JerwinTitus2006&theme=dark&hide_border=true&background=0d1117&ring=00f2fe&fire=00f2fe&sideLabels=8b949e&sideNums=ffffff" alt="GitHub Streak" />
     </td>
   </tr>
 </table>
@@ -169,10 +169,10 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 <table border="0" style="border: none;">
   <tr style="border: none;">
     <td style="border: none; padding: 5px; vertical-align: top;">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JerwinTitus2006&amp;layout=compact&amp;theme=dark&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=00f2fe&amp;icon_color=4facfe&amp;text_color=8b949e" alt="Top Languages" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JerwinTitus2006&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=00f2fe&icon_color=4facfe&text_color=8b949e" alt="Top Languages" />
     </td>
     <td style="border: none; padding: 5px; vertical-align: top;">
-      <img src="https://github-profile-trophy.vercel.app/?username=JerwinTitus2006&amp;theme=onedark&amp;column=3&amp;margin-w=15&amp;margin-h=15&amp;no-bg=true&amp;no-frame=true" alt="GitHub Trophies" />
+      <img src="https://github-profile-trophy.vercel.app/?username=JerwinTitus2006&theme=onedark&column=3&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
     </td>
   </tr>
 </table>
@@ -190,7 +190,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 <div align="center">
 
 <a href="https://leetcode.com/u/n8ocko7IIm/" target="_blank">
-  <img src="https://leetcode-stats-card.herokuapp.com/?username=n8ocko7IIm&amp;theme=dark" alt="LeetCode Stats" />
+  <img src="https://leetcard.jacoblin.cool/n8ocko7IIm?theme=dark" alt="LeetCode Stats" />
 </a>
 
 </div>
@@ -203,7 +203,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 
 <!-- Holopin Badges -->
 <a href="https://holopin.io/@JerwinTitus2006" target="_blank">
-  <img src="assets/holopin.svg" width="100%" alt="Holopin Badges" style="border-radius: 8px;" />
+  <img src="https://holopin.me/JerwinTitus2006/badge.svg" width="100%" alt="Holopin Badges" style="border-radius: 8px;" />
 </a>
 
 </div>
@@ -229,7 +229,14 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 
 <!-- START_SECTION:spotify -->
 <div align="center">
-  <span style="font-size: 14px; color: #a7a7a7;">🔇 Nothing playing right now</span>
+  <a href="https://open.spotify.com/track/6513TyYuZbtUq7489hCawm" target="_blank" rel="noopener noreferrer">
+    <img src="https://i.scdn.co/image/ab67616d0000b2735165d491f24d770135d554a9" width="80" height="80" style="border-radius: 8px; margin-right: 15px; vertical-align: middle; box-shadow: 0 4px 10px rgba(0,0,0,0.5);" />
+    <div style="display: inline-block; text-align: left; vertical-align: middle;">
+      <span style="color: #1DB954; font-weight: bold; font-size: 14px;">🔊 NOW PLAYING</span><br/>
+      <span style="font-weight: 600; font-size: 16px; color: #ffffff;">Rewrite the Stars</span><br/>
+      <span style="font-size: 14px; color: #a7a7a7;">by Zac Efron, Zendaya</span>
+    </div>
+  </a>
 </div>
 <!-- END_SECTION:spotify -->
 
