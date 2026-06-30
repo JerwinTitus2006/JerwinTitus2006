@@ -156,7 +156,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 <table border="0" style="border: none;">
   <tr style="border: none;">
     <td style="border: none; padding: 5px;">
-      <img src="https://github-readme-stats.vercel.app/api?username=JerwinTitus2006&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=00f2fe&icon_color=4facfe&text_color=8b949e" alt="GitHub Stats" />
+      <img src="https://github-stats-extended.vercel.app/api?username=JerwinTitus2006&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=00f2fe&icon_color=4facfe&text_color=8b949e" alt="GitHub Stats" />
     </td>
     <td style="border: none; padding: 5px;">
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=JerwinTitus2006&theme=dark&hide_border=true&background=0d1117&ring=00f2fe&fire=00f2fe&sideLabels=8b949e&sideNums=ffffff" alt="GitHub Streak" />
@@ -169,10 +169,10 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 <table border="0" style="border: none;">
   <tr style="border: none;">
     <td style="border: none; padding: 5px; vertical-align: top;">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JerwinTitus2006&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=00f2fe&icon_color=4facfe&text_color=8b949e" alt="Top Languages" />
+      <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=JerwinTitus2006&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=00f2fe&icon_color=4facfe&text_color=8b949e" alt="Top Languages" />
     </td>
     <td style="border: none; padding: 5px; vertical-align: top;">
-      <img src="https://github-profile-trophy.vercel.app/?username=JerwinTitus2006&theme=onedark&column=3&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
+      <img src="https://github-profile-trophy-reiyua-mirror.vercel.app/?username=JerwinTitus2006&theme=onedark&column=3&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
     </td>
   </tr>
 </table>
@@ -195,20 +195,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 
 </div>
 
----
 
-## 🏅 Credentials & Badges
-
-<div align="center">
-
-<!-- Holopin Badges -->
-<a href="https://holopin.io/@JerwinTitus2006" target="_blank">
-  <img src="https://holopin.me/JerwinTitus2006/badge.svg" width="100%" alt="Holopin Badges" style="border-radius: 8px;" />
-</a>
-
-</div>
-
----
 
 ## 🎮 Contribution Pac-Man
 
