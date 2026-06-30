@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Check Markdown Links
-        uses: lycheeverse/lychee-action@v1.9.0
+        uses: lycheeverse/lychee-action@v2.8.0
         with:
           # Arguments to pass to lychee
           args: --verbose --no-progress README.md
