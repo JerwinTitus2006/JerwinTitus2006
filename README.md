@@ -259,13 +259,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 
 <br/>
 
-### Support My Work
-<a href="https://ko-fi.com/jerwintitus" target="_blank"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=flat-square&amp;logo=ko-fi&amp;logoColor=white" alt="Ko-Fi" /></a>
-<a href="https://patreon.com/jerwintitus" target="_blank"><img src="https://img.shields.io/badge/Patreon-F96854?style=flat-square&amp;logo=patreon&amp;logoColor=white" alt="Patreon" /></a>
-<a href="https://paypal.me/jerwintitus" target="_blank"><img src="https://img.shields.io/badge/PayPal-003087?style=flat-square&amp;logo=paypal&amp;logoColor=white" alt="PayPal" /></a>
 
-<br/>
-<br/>
 
 <!-- Animated Footer -->
 <img src="assets/footer.svg" width="100%" alt="Footer Divider" />
