@@ -210,15 +210,15 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 
 ---
 
-## 🎮 Contribution Grid Snake
+## 🎮 Contribution Pac-Man
 
 <div align="center">
 
-<!-- Platane Snake Game -->
+<!-- Pac-Man Contribution Graph -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JerwinTitus2006/JerwinTitus2006/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JerwinTitus2006/JerwinTitus2006/output/github-contribution-grid-snake.svg">
-  <img alt="GitHub Contribution Grid Snake" src="https://raw.githubusercontent.com/JerwinTitus2006/JerwinTitus2006/output/github-contribution-grid-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JerwinTitus2006/JerwinTitus2006/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JerwinTitus2006/JerwinTitus2006/output/pacman-contribution-graph.svg">
+  <img alt="Pac-Man contribution graph" src="https://raw.githubusercontent.com/JerwinTitus2006/JerwinTitus2006/output/pacman-contribution-graph.svg">
 </picture>
 
 </div>
