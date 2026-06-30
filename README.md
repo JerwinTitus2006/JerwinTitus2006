@@ -166,16 +166,7 @@ I am a passionate engineer pursuing a **B.Tech in Artificial Intelligence & Data
 
 <br/>
 
-<table border="0" style="border: none;">
-  <tr style="border: none;">
-    <td style="border: none; padding: 5px; vertical-align: top;">
-      <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=JerwinTitus2006&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=00f2fe&icon_color=4facfe&text_color=8b949e" alt="Top Languages" />
-    </td>
-    <td style="border: none; padding: 5px; vertical-align: top;">
-      <img src="https://github-profile-trophy-reiyua-mirror.vercel.app/?username=JerwinTitus2006&theme=onedark&column=3&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="GitHub Trophies" />
-    </td>
-  </tr>
-</table>
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=JerwinTitus2006&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=00f2fe&icon_color=4facfe&text_color=8b949e" alt="Top Languages" />
 
 <br/>
 
